@@ -1,0 +1,49 @@
+
+/* 在这里设置有意思的导航栏 */
+
+ul.nav{
+    clear: both;
+    /* background:cornflowerblue; */
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+}
+
+ul.nav li{
+    float: right;
+}
+
+ul.nav a{
+    display: block;
+    padding: 0 2em;
+    line-height: 2.1em;
+    background-color: cornflowerblue;
+    text-decoration: none;
+    color:#d5d5d5;
+}
+
+ul.nav:link {
+    color:black;
+}
+ul.nav:visited{
+    color:green;
+}
+ul.nav a:hover,a:active{
+    color:red;
+}
+a{
+    text-decoration: none;
+}
+
+
+li{
+    height: 45px;
+    font-size: 18px;
+    margin-right: 10px;
+    list-style: none;
+    float: left;
+}
+
+
+
+

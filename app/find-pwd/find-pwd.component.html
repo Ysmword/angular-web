@@ -1,0 +1,20 @@
+<div class="background" style="background-image:url(assets/mod-user.jpg);">
+  <div class="find">
+    <div style="text-align:center;color:black">
+      <h2>找回密码</h2>
+    </div>
+    <div style="text-align:center">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div>
+            <input type="text" placeholder="请输入您的账号" formControlName="id" >
+        </div>
+        <div>
+            <input type="password" placeholder="手机号码" required formControlName="phonenumber">
+        </div>
+          <button type="submit" [disabled]='!profileForm.valid'>找回密码</button>
+      </form>
+      <button (click)="goBack()">go back</button>
+    </div>
+  </div>
+</div>
+

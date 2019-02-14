@@ -1,0 +1,16 @@
+<h2>最受欢迎的十大动漫</h2>
+<div>
+  <ul class="cartoons">
+    <li class="cartoons" *ngFor="let ct of cartoons" [class.selected]="ct === selectedct" (click)="onSelect(ct)">
+      <!--[class.selected]="ct === selectedct"这句话的解读方式：ct===selected是一个判断语句，当他们相等的时候，才会创建这个类  -->
+      <a routerLink='/detail/{{ct.num}}' style="text-decoration:none">
+        {{ct.name}}
+      </a>
+    </li>
+  </ul>
+</div>
+
+ 
+<!-- 这样没有达到我想要的效果，我要的是在另一个页面显示信息 -->
+<!-- <app-cartoon-detail [ct]="selectedct"></app-cartoon-detail> -->
+
