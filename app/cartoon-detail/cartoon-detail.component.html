@@ -1,0 +1,21 @@
+
+
+
+<div *ngIf="ct1">
+  <!-- 到时候这里要添加图片的 -->
+    <h2 class="title">{{ct1.name||uppercase}} Details</h2>
+    <div>
+      <span >作者</span>： <span>{{ct1.author}} </span><br>
+      <span>类型</span>: <span>{{ct1.type}}</span><br>
+      <span>集</span> : <span>{{ct1.episodes}}</span><br>
+      <!-- <span>{{ct1.comment}}</span><br> -->
+      <!-- 以后在这里对数据进行修改，其他的不用修改 -->
+      <label>Comment: <br>
+        <!-- <input type="text" style="width:200px;height:40px" [(ngModel)]="selectedct.comment" placeholder="comment"> -->
+        <textarea rows="5" cols="50" readonly [(ngModel)]="ct1.comment">{{ct1.comment}}</textarea>
+        <!-- 这里将textarea设置为只读，因为这里只是显示信息而已，并不包含修改信息 -->
+      </label>
+    </div>
+    <button (click)="goBack()">go back</button>
+</div>
+

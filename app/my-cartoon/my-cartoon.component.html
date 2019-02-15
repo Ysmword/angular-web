@@ -1,0 +1,43 @@
+<div class="background">
+  <!-- <button (click)="getData()" style="margin-top:500px">页面间传值</button> 这个是让我想实现能页面间的传值的 -->
+  <div class="content">
+      <div>
+          <h2>{{data}}[<a routerLink="/add" (click)="transfer()">添加动漫</a>]</h2>
+          <!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <input type="text" formControlName="name" placeholder="请输入动漫的名字">
+            <button type="submit" [disabled]='!profileForm.valid' (click)="onSubmit()">搜索</button>
+          </form> -->
+          <input type="text" id="name" name="name" required [(ngModel)]="cartoon_name" #name="ngModel" placeholder="请输入动漫的名字">
+          <button type="submit" [disabled]='!name.valid' (click)="onSubmit()">搜索</button>
+      </div>
+      <ul>
+          <li *ngFor="let item of PageList" style="text-decoration: none">
+            <div class="info">
+                <span>动漫的名字</span>：{{item.name}}  <br>
+                <span>动漫的作者</span>：{{item.author}} <br>
+                <span>动漫的类型</span>：{{item.Type}}  <br>
+                <span>动漫的集数</span>：{{item.episodes}} <br>
+                <span>你对动漫的评价</span>：<br>
+                <textarea rows="5" cols="50" readonly>{{item.comment}}</textarea>
+                <div style="float:right;margin-top:60px">
+                    <a routerLink="/mod" style="text-decoration: none" (click)="sendData(item.name,item.author,item.Type,item.episodes,item.comment,item.ID)">修改</a>
+                    <button (click)="Delete(item.name)">删除</button>
+                </div>
+            </div>
+          </li>
+      </ul>
+
+      <!-- 这里是用来分页显示的 -->
+      <div>
+        <button type="button" [disabled]="!preShow" (click)="showPrePage()">上一页</button>
+        <input type="text" (change)="onChangePage($event.target.value)" placeholder="{{curPage}}" value="{{curPage}}">
+        <span> / {{pageNo}} 页</span>
+        <button type="button" [disabled]="!nextShow" (click)="showNextPage()">下一页</button>
+        <span> 每页显示 : </span>
+        <select (change)="onChangePageSize($event.target.value)">
+            <option *ngFor="let pageSize of pageSizes" value="{{pageSize}}">{{pageSize}}</option>
+        </select>
+        <span>共{{list.length}}条</span>
+    </div>
+  </div>
+</div>

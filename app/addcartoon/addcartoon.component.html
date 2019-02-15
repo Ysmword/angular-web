@@ -1,0 +1,41 @@
+<div class="background" style="background-image:url(assets/add.jpg)">
+  <div class="add">
+      <div style="text-align:center;color:black">
+          <h2>添加动漫信息</h2>
+      </div>
+      <div style="text-align:center">
+          <form [formGroup]="profileForm">
+  
+            <div>
+              <label>动漫的名字:
+                  <input type="text" formControlName="name" placeholder={{name}}>
+              </label>
+            </div>
+            <div>
+                <label>动漫的作者:
+                    <input type="text" formControlName="author" placeholder={{author}}>
+                </label>
+            </div>
+            <div>
+                <label>动漫的类型:
+                    <input type="text" formControlName="type" placeholder={{type}}>
+                </label>
+            </div>
+            <div>
+                <label>动漫的集数:
+                    <input type="text" formControlName="episodes" placeholder={{epiosdes}}>
+                </label>
+            </div>
+          </form>
+        <div>
+          <div>
+            <label>动漫的评论:
+              <textarea rows="5" cols="50" [(ngModel)]="comment" class="comment">{{comment}}</textarea>
+            </label>
+          </div>
+          <button type="submit" [disabled]='!profileForm.valid' (click)="onSubmit()">添加</button>
+          <button (click)="goBack()">go back</button>
+        </div>
+    </div>
+  </div>
+</div>

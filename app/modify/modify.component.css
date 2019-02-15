@@ -1,0 +1,41 @@
+
+.mod{
+    border: 1px solid #eee;
+    position: absolute;
+    width: 500px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: white
+}
+
+input{
+    font-family: helvetica,arial,微软雅黑,华文黑体;
+    font-size: 18px;
+    border-radius: 6px;
+    width: 272px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+button{
+    width: 272px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 6px;
+    background-color:greenyellow;
+    font-size: 18px;
+}
+.comment{
+    height: 89px;
+    font-family: helvetica,arial,微软雅黑,华文黑体;
+    font-size: 18px;
+    border-radius: 6px;
+    width: 272px;
+    margin-top: 20px;
+}

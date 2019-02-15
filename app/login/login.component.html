@@ -1,0 +1,25 @@
+<div class="background" class="background" style="background-image:url(assets/login.jpg);">
+  <div class="login">
+    <div style="text-align:center;color:black">
+      <h2>账号密码登录</h2>
+    </div>
+    <div style="text-align:center">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div>
+            <input type="text" placeholder="请输入您的账号" formControlName="id" >
+        </div>
+        <div>
+            <input type="password" placeholder="密码" required formControlName="password">
+        </div>
+          <button type="submit" [disabled]='!profileForm.valid'>登录</button>
+      </form>
+    </div>
+    <div class="box2">
+      <a routerLink="/findpwd">忘记密码？</a><span>|</span><a routerLink="/register">注册</a>
+    </div>
+  </div>
+</div>
+
+
+
+

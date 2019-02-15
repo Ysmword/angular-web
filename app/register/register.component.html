@@ -1,0 +1,63 @@
+
+<div class="background" class="background" style="background-image:url(assets/register.jpg);">
+  <div class="register">
+    <div style="text-align:center;color:black">
+        <h2>欢迎注册</h2>
+    </div>
+    <div style="text-align:center">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" #formDir="ngForm">
+        <div>
+          <input type="text" formControlName="name" placeholder="昵称(至少两个字)">
+          <div *ngIf="name.invalid && (name.dirty||name.touched)" class="alertalert-danger">
+              <div *ngIf="name.errors.required"> 
+                  昵称是必须的
+                </div>
+                <div *ngIf="name.errors.minlength">
+                  昵称至少两个字
+                </div>
+          </div>
+        </div>
+        <div>
+          <input type="text" id="account" placeholder="账号(11个数字)" formControlName="id">
+          <div *ngIf="id.invalid && (id.dirty||id.touched)" class="alertalert-danger">
+            <div *ngIf="id.errors.required"> 
+              账号是必须的
+            </div>
+            <div *ngIf="id.errors.minlength||id.errors.maxLength">
+              账号必须是十一位
+            </div>
+            <div *ngIf="id.errors.pattern">
+              账号必须是数字
+            </div>
+          </div>
+        </div>
+        <div>
+            <input type="password"placeholder="密码" formControlName="password">
+            <div *ngIf="password.invalid && (password.dirty||password.touched)" class="alertalert-danger">
+              <div *ngIf="password.errors.required">
+                密码是必须的
+              </div>
+            </div>
+        </div>
+        <div>
+          <input type="text" placeholder="手机号码(11个数字)" required formControlName="phonenumber">
+          <div *ngIf="phonenumber.invalid && (phonenumber.dirty||phonenumber.touched)" class="alertalert-danger"> 
+              <div *ngIf="phonenumber.errors.required"> 
+                  账号是必须的
+                </div>
+            <div *ngIf="phonenumber.errors.minlength||phonenumber.errors.maxLength">
+              手机号码必须是十一位
+            </div>
+            <div *ngIf="phonenumber.errors.pattern">
+              手机号码必须是数字
+            </div>
+          </div>
+        </div>
+        <button type="submit" [disabled]='!profileForm.valid'>立即注册</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    
