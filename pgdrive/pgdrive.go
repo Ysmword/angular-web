@@ -12,7 +12,7 @@ const(
 	host = "localhost"
 	port = 5432
 	user = "postgres"
-	password = "ysm@121388"
+	password = ""
 )  //这个用来连接数据库的数据
 
 
