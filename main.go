@@ -19,8 +19,6 @@ func main(){
 	//查询用户是否存在，或者用户的信息是否正确
 	//这里需要从前端拿到信息
 	// //先虚构一个数据
-	// Account :="12345678912"
-	// password :="ysm@121388"
 	// pgdrive.Querydata(db,Account,password)   //查找数据，能实现后端数据的判断的
 
 
